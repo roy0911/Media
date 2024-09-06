@@ -9,12 +9,15 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,6 +26,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -64,24 +68,54 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             Button(onClick = {
                 mper.reset()
                 mper = MediaPlayer.create(context, R.raw.tcyang)
-                mper.start()
-            }) {
-                Text(text = "歡迎修課")
+                mper.start() },
+                Modifier
+                    .fillMaxWidth(0.33f)
+                    .fillMaxHeight(0.3f),
+                colors = buttonColors(Color.Green)
+
+            ) {
+                Text(text = "歡迎", color = Color.Blue)
+                Text(text = "修課", color = Color.Red)
+                Image(
+                    painterResource(id = R.drawable.teacher),
+                    contentDescription ="teacher icon",
+                    modifier = Modifier.size(50.dp))
             }
 
-            Button(onClick = {
-                mper.reset()
-                mper = MediaPlayer.create(context, R.raw.fly)
-                mper.start()
-            }) {
+            Button(
+                onClick = {
+                    mper.reset()
+                    mper = MediaPlayer.create(context, R.raw.fly)
+                    mper.start()
+                },
+                modifier = Modifier
+                    .fillMaxWidth(0.5f)
+                    .fillMaxHeight(0.5f)
+            ) {
                 Text(text = "展翅飛翔")
+                Image(
+                    painterResource(id = R.drawable.fly),
+                    contentDescription ="fly icon",
+                    modifier = Modifier.size(50.dp))
             }
 
-            Button(onClick = {
-                //your onclick code here
-            }) {
-                Text(text = "手碟音樂")
+            Button(
+                onClick = {
+                    mper.reset()
+                },
+                Modifier
+                    .fillMaxWidth ()
+                    .fillMaxHeight(0.7f),
+                colors = buttonColors(Color.Red)
+            ) {
+                Text(text = "手碟音樂", color = Color.White)
+                Image(
+                    painterResource(id = R.drawable.handpan),
+                    contentDescription ="handpan icon",
+                    modifier = Modifier.size(50.dp))
             }
+
         }
 
 
