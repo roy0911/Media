@@ -1,5 +1,6 @@
 package tw.edu.pu.csim.tcyang.media
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -103,6 +104,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             Button(
                 onClick = {
                     mper.reset()
+                    context.startActivity(Intent(context, VideoActivity::class.java))
                 },
                 Modifier
                     .fillMaxWidth ()
