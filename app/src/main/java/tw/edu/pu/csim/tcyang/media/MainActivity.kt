@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -51,13 +52,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
     var AnimalsName = arrayListOf("鴨子","企鵝","青蛙","貓頭鷹","海豚", "牛", "無尾熊", "獅子", "狐狸", "小雞")
 
-    LazyColumn {
+    LazyRow {
         items(51) { index ->
             Text(text = AnimalsName[index % 10])
             Image(
                 painter = painterResource(id = Animals[index % 10]),
-                contentDescription = "可愛動物圖片")
-            Spacer(modifier = Modifier.size(30.dp))
+                contentDescription = "可愛動物圖片",
+                modifier = Modifier.fillParentMaxWidth(1.0f))
         }
         item{
             Text(text = "行動應用軟體開發")
