@@ -39,7 +39,8 @@ class VideoActivity : ComponentActivity() {
 fun Greeting2(name: String, modifier: Modifier = Modifier) {
     val context = LocalContext.current
 
-    val link = "https://www1.pu.edu.tw/~tcyang/handpan.mp4"
+    //val link = "https://www1.pu.edu.tw/~tcyang/handpan.mp4"
+    val link = "https://d.ytcdn.app/get?file=eyJmaWxlIjoiTVdZM05HSTNPR0UxTjJZMFpqQTJaVE0wTldNMU1UYzVZVEJrWkRNNFlXUTRObUZrWldWbFlqUXpNak5pTmpVMU1qSTBZVGMxWlRJMlltSmlZMkprTVY4M01qQndMbTF3Tk9LWXIxZ3lSRzkzYm14dllXUXVZMjl0TFVrZ1RHOTJaU0JVWVdsM1lXNGdVR0Z5ZENCSklPYUlrZWFFbS1XUHNPZUJvLWVzck9TNGdPbURxT0tZcnpjeU1IQSIsImZpbGVuYW1lIjoiWDJEb3dubG9hZC5jb20tSSUyMExvdmUlMjBUYWl3YW4lMjBQYXJ0JTIwSSUyMCVFNiU4OCU5MSVFNiU4NCU5QiVFNSU4RiVCMCVFNyU4MSVBMyVFNyVBQyVBQyVFNCVCOCU4MCVFOSU4MyVBOC5tcDQiLCJob3N0IjoiaHR0cHM6Ly9jdjE0Lnl0Y2RuLmFwcCIsImV4cGlyZXMiOjE3MjU2MTcwNDksInRva2VuIjoiOWI3Yjk1ZjM5MDA0ZTBlN2Q4ODg5Y2ZmZTcxMTJmMzM2MTljODE0ZWMwZjI3ZGM3NWEwYmU2YmViZjNmNmU4ZiJ9"
     val exoPlayer = ExoPlayer.Builder(context).build()
 
     val mediaItem = MediaItem.fromUri(android.net.Uri.parse(link))
